@@ -3,14 +3,14 @@
   "Version": 1,
   "VersionName": "1.0",
   "FriendlyName": "AINiagaraFXPlugin",
-  "Description": "Custom Niagara FX Plugin with Blueprint support.",
-  "Category": "Other",
+  "Description": "AI-powered Niagara FX editor tool with natural language control.",
+  "Category": "Editor",
   "CreatedBy": "ImmersaLab",
   "CreatedByURL": "https://immersalab.com",
   "DocsURL": "",
   "MarketplaceURL": "",
   "SupportURL": "",
-  "CanContainContent": false,
+  "CanContainContent": true,
   "IsBetaVersion": false,
   "IsExperimentalVersion": false,
   "Installed": false,
@@ -18,8 +18,9 @@
   "Modules": [
     {
       "Name": "AINiagaraFXPlugin",
-      "Type": "Runtime",
-      "LoadingPhase": "Default"
+      "Type": "Editor",
+      "LoadingPhase": "Default",
+      "WhitelistPlatforms": [ "Win64", "Mac", "Linux" ]
     },
     {
       "Name": "AINiagaraFXPluginEditor",
@@ -27,6 +28,16 @@
       "LoadingPhase": "PostEngineInit",
       "WhitelistPlatforms": [ "Win64", "Mac", "Linux" ],
       "BlacklistPlatforms": [ "Android", "iOS" ]
+    }
+  ],
+  "Plugins": [
+    {
+      "Name": "PythonScriptPlugin",
+      "Enabled": true
+    },
+    {
+      "Name": "EditorScriptingUtilities",
+      "Enabled": true
     }
   ]
 }
